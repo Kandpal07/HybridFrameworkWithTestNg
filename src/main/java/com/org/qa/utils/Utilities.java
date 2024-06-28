@@ -77,18 +77,29 @@ public class Utilities {
 	}
 	
 	public static String captureScreenshot(WebDriver driver,String testName) {
+//		File srcScreenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//		Path destinationScreenshotPath = null;
+//		try {
+//			destinationScreenshotPath = Paths.get(System.getProperty("user.dir") + File.separator  + "screenshots" + File.separator +testName + ".png").toRealPath();
+//		} catch (IOException e) {
+//			throw new RuntimeException(e);
+//		}
+//		try {
+//			FileHandler.copy(srcScreenshot, new File(destinationScreenshotPath.toUri()));
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		return destinationScreenshotPath.toString();
+//	}
 		File srcScreenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		Path destinationScreenshotPath = null;
+		String destinationScreenshotPath = System.getProperty("user.dir")+"\\Screenshots\\"+testName+".png";
+
 		try {
-			destinationScreenshotPath = Paths.get(System.getProperty("user.dir") + File.separator  + "screenshots" + File.separator +testName + ".png").toRealPath();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		try {
-			FileHandler.copy(srcScreenshot, new File(destinationScreenshotPath.toUri()));
+			FileHandler.copy(srcScreenshot,new File(destinationScreenshotPath));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return destinationScreenshotPath.toString();
+
+		return destinationScreenshotPath;
 	}
 }

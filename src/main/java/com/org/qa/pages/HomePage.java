@@ -34,7 +34,6 @@ public class HomePage {
 	//Actions
 	public LoginPage selectSauceLabsBackpack() {
 		sauceLabsBackpack.click();
-		loginOption.click();
 		return new LoginPage(driver);
 		
 	}

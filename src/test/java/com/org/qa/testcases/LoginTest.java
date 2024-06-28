@@ -2,7 +2,6 @@ package com.org.qa.testcases;
 
 import com.org.qa.base.Base;
 import com.org.qa.pages.HomePage;
-import com.org.qa.pages.LoginPage;
 import com.org.qa.utils.Utilities;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
